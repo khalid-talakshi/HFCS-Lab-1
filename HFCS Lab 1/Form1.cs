@@ -17,7 +17,18 @@ namespace HFCS_Lab_1
         public Form1()
         {
             InitializeComponent();
+
+            greyhoundArray[0] = new Greyhound()
+            {
+                myPictureBox = pictureBox1,
+                startingPosition = pictureBox1.Left,
+                raceTrackLength = raceTrackPictureBox.Width - pictureBox1.Width,
+                randomizer = myRandomizer;
+
+            };
         }
+
+        
 
 
     }
