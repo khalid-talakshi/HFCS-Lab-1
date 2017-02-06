@@ -30,7 +30,7 @@ namespace HFCS_Lab_1
         {
             if (dog == winner)
             {
-                return 2 * amount;
+                return amount;
             }
 
             return -amount;

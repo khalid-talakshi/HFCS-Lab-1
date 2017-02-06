@@ -20,19 +20,7 @@ namespace HFCS_Lab_1
         public void updateLabel()
         {
 
-            if (myBet == null)
-            {
-
-                myLabel.Text = name + " hasn't placed a bet";
-
-            }
-            else
-            {
-
-                myLabel.Text = myBet.GetDescription();
-
-            }
-
+            myLabel.Text = myBet.GetDescription();
             myRadioButton.Text = name + " has " + cash + " bucks";
 
         }
@@ -47,7 +35,7 @@ namespace HFCS_Lab_1
 
             if (betAmount <=  cash)
             {
-                cash -= betAmount;
+                Bet myBet = new Bet();
                 myBet.amount = betAmount;
                 myBet.dog = dogToWin;
                 updateLabel(); 

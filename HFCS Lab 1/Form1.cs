@@ -91,7 +91,7 @@ namespace HFCS_Lab_1
             }
         }
 
-        private void betButton_Click(object sender, EventArgs e)
+        public void betButton_Click(object sender, EventArgs e)
         {
 
             if (joeBetRadioButton.Checked)
