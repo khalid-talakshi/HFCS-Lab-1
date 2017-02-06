@@ -15,12 +15,26 @@ namespace HFCS_Lab_1
 
         //GUI objects
         public RadioButton myRadioButton;
-        public Label myLabel; 
+        public Label myLabel;
 
         public void updateLabel()
         {
-            myLabel.Text = name + " bets $" + myBet.amount + " on dog #" + myBet.dog;
-            myRadioButton.Text = name + " has $" + cash;
+
+            if (myBet == null)
+            {
+
+                myLabel.Text = name + " hasn't placed a bet";
+
+            }
+            else
+            {
+
+                myLabel.Text = myBet.GetDescription();
+
+            }
+
+            myRadioButton.Text = name + " has " + cash + " bucks";
+
         }
 
         public void resetBet()

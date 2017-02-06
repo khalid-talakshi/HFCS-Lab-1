@@ -77,7 +77,7 @@ namespace HFCS_Lab_1
                 myLabel = bobBetLabel,
             };
 
-            guyArray[0] = new guy
+            guyArray[2] = new guy
             {
                 name = "Hal",
                 cash = 45,
@@ -85,9 +85,24 @@ namespace HFCS_Lab_1
                 myLabel = halBetLabel,
             };
 
-            foreach (guy guy in guyArray)
+            for (int i = 0; i <= 2; i++)
             {
-                guy.updateLabel();
+                guyArray[i].updateLabel();
+            }
+        }
+
+        private void betButton_Click(object sender, EventArgs e)
+        {
+
+            if (joeBetRadioButton.Checked)
+            {
+                guyArray[0].placeBet((int)betValueNUD.Value, (int)dogNumberNUD.Value - 1);
+            } else if (bobBetRadioButton.Checked)
+            {
+                guyArray[1].placeBet((int)betValueNUD.Value, (int)dogNumberNUD.Value - 1);
+            } else if (halBetRadioButton.Checked)
+            {
+                guyArray[2].placeBet((int)betValueNUD.Value, (int)dogNumberNUD.Value - 1);
             }
         }
 

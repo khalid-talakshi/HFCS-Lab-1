@@ -46,17 +46,18 @@ namespace HFCS_Lab_1
             this.bobBetLabel = new System.Windows.Forms.Label();
             this.halBetLabel = new System.Windows.Forms.Label();
             this.nameLabel = new System.Windows.Forms.Label();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.betValueNUD = new System.Windows.Forms.NumericUpDown();
             this.label2 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.runButton = new System.Windows.Forms.Button();
             this.betButton = new System.Windows.Forms.Button();
+            this.dogNumberNUD = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.raceTrackPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.betValueNUD)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dogNumberNUD)).BeginInit();
             this.SuspendLayout();
             // 
             // raceTrackPictureBox
@@ -208,13 +209,13 @@ namespace HFCS_Lab_1
             this.nameLabel.TabIndex = 14;
             this.nameLabel.Text = "name";
             // 
-            // numericUpDown1
+            // betValueNUD
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(152, 393);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(70, 26);
-            this.numericUpDown1.TabIndex = 16;
-            this.numericUpDown1.Value = new decimal(new int[] {
+            this.betValueNUD.Location = new System.Drawing.Point(152, 393);
+            this.betValueNUD.Name = "betValueNUD";
+            this.betValueNUD.Size = new System.Drawing.Size(70, 26);
+            this.betValueNUD.TabIndex = 16;
+            this.betValueNUD.Value = new decimal(new int[] {
             5,
             0,
             0,
@@ -225,25 +226,9 @@ namespace HFCS_Lab_1
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(228, 395);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(27, 20);
+            this.label2.Size = new System.Drawing.Size(71, 20);
             this.label2.TabIndex = 17;
-            this.label2.Text = "on";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.DisplayMember = "dog 1";
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "dog 1",
-            "dog 2",
-            "dog 3",
-            "dog 4"});
-            this.comboBox1.Location = new System.Drawing.Point(261, 392);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 28);
-            this.comboBox1.TabIndex = 18;
-            this.comboBox1.Text = "select";
-            this.comboBox1.ValueMember = "dog 1";
+            this.label2.Text = "on dog #";
             // 
             // runButton
             // 
@@ -262,17 +247,40 @@ namespace HFCS_Lab_1
             this.betButton.TabIndex = 20;
             this.betButton.Text = "bets";
             this.betButton.UseVisualStyleBackColor = true;
+            this.betButton.Click += new System.EventHandler(this.betButton_Click);
+            // 
+            // dogNumberNUD
+            // 
+            this.dogNumberNUD.Location = new System.Drawing.Point(305, 393);
+            this.dogNumberNUD.Maximum = new decimal(new int[] {
+            4,
+            0,
+            0,
+            0});
+            this.dogNumberNUD.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.dogNumberNUD.Name = "dogNumberNUD";
+            this.dogNumberNUD.Size = new System.Drawing.Size(45, 26);
+            this.dogNumberNUD.TabIndex = 21;
+            this.dogNumberNUD.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(624, 446);
+            this.Controls.Add(this.dogNumberNUD);
             this.Controls.Add(this.betButton);
             this.Controls.Add(this.runButton);
-            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.numericUpDown1);
+            this.Controls.Add(this.betValueNUD);
             this.Controls.Add(this.nameLabel);
             this.Controls.Add(this.halBetLabel);
             this.Controls.Add(this.bobBetLabel);
@@ -295,7 +303,8 @@ namespace HFCS_Lab_1
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.betValueNUD)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dogNumberNUD)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -318,12 +327,12 @@ namespace HFCS_Lab_1
         private System.Windows.Forms.Label bobBetLabel;
         private System.Windows.Forms.Label halBetLabel;
         private System.Windows.Forms.Label nameLabel;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.NumericUpDown betValueNUD;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboBox1;
         private EventHandler comboBox1_SelectedIndexChanged;
         private System.Windows.Forms.Button runButton;
         private System.Windows.Forms.Button betButton;
+        private System.Windows.Forms.NumericUpDown dogNumberNUD;
     }
 }
 
