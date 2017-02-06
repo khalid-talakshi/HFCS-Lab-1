@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace HFCS_Lab_1
@@ -17,12 +18,31 @@ namespace HFCS_Lab_1
 
         public bool run()
         {
-            return true;
+            // Randomly chooses distance run
+            randomizer = new Random();
+            int distance = randomizer.Next(1, 5);
+
+            //Moves the picturebox that many units (1 unit = 1 greyhound)
+            Point p = myPictureBox.Location;
+            p.X += myPictureBox.Width * distance;
+            location += distance;
+
+            //check if greyhound crossed finish line
+            if (location >= raceTrackLength - startingPosition)
+            {
+                return true;
+            }
+
+            return false;
+            
         }
 
         public void takeStartingPosition()
         {
-            return;
+            Point p = myPictureBox.Location;
+            p.X -= myPictureBox.Width * location;
+            location = 0;
         }
+
     }
 }

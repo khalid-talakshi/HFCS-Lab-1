@@ -10,16 +10,31 @@ namespace HFCS_Lab_1
     {
         public int amount;
         public int dog;
-        public int Bettor;
+        public guy  Bettor;
 
         public string GetDescription()
         {
+            string description = "";
+            if (amount > 0)
+            {
+                description = Bettor.name + " bets $" + amount + " on dog #" + dog;
+            } else
+            {
+                description = Bettor.name + " has not placed a bet";
+            }
 
+            return description;
         }
 
         public int PayOut(int winner)
         {
+            if (dog == winner)
+            {
+                return amount;
+            }
 
+            return -amount;
+            
         }
     }
 }

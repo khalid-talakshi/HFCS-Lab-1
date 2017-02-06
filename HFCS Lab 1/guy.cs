@@ -19,22 +19,37 @@ namespace HFCS_Lab_1
 
         public void updateLabel()
         {
-
+            myLabel.Text = name + " bets $" + myBet.amount + " on dog #" + myBet.dog;
+            myRadioButton.Text = name + " has $" + cash;
         }
 
         public void resetBet()
         {
-            
+            myBet.amount = 0;
         }
 
         public bool placeBet(int betAmount, int dogToWin)
         {
-            return true;
+
+            if (betAmount <=  cash)
+            {
+                cash -= betAmount;
+                myBet.amount = betAmount;
+                myBet.dog = dogToWin;
+                updateLabel(); 
+                return true;
+            }   
+            else
+            {
+                myRadioButton.Text = name + " has insufficent funds.";
+                return false;
+            }
+            
         }
 
         public void collect (int winner)
         {
-
+            cash += myBet.PayOut(winner);
         }
     }
 }
