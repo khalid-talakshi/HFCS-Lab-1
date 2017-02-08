@@ -139,6 +139,7 @@ namespace HFCS_Lab_1
             this.joeBetRadioButton.TabStop = true;
             this.joeBetRadioButton.Text = "joeBetRadioButton";
             this.joeBetRadioButton.UseVisualStyleBackColor = true;
+            this.joeBetRadioButton.CheckedChanged += new System.EventHandler(this.joeBetRadioButton_CheckedChanged);
             // 
             // bobBetRadioButton
             // 
@@ -150,6 +151,7 @@ namespace HFCS_Lab_1
             this.bobBetRadioButton.TabStop = true;
             this.bobBetRadioButton.Text = "bobBetRadioButton";
             this.bobBetRadioButton.UseVisualStyleBackColor = true;
+            this.bobBetRadioButton.CheckedChanged += new System.EventHandler(this.bobBetRadioButton_CheckedChanged);
             // 
             // halBetRadioButton
             // 
@@ -161,6 +163,7 @@ namespace HFCS_Lab_1
             this.halBetRadioButton.TabStop = true;
             this.halBetRadioButton.Text = "halBetRadioButton";
             this.halBetRadioButton.UseVisualStyleBackColor = true;
+            this.halBetRadioButton.CheckedChanged += new System.EventHandler(this.halBetRadioButton_CheckedChanged);
             // 
             // betsHeaderLabel
             // 
@@ -253,28 +256,17 @@ namespace HFCS_Lab_1
             // 
             this.dogNumberNUD.Location = new System.Drawing.Point(305, 393);
             this.dogNumberNUD.Maximum = new decimal(new int[] {
-            4,
-            0,
-            0,
-            0});
-            this.dogNumberNUD.Minimum = new decimal(new int[] {
-            1,
+            3,
             0,
             0,
             0});
             this.dogNumberNUD.Name = "dogNumberNUD";
             this.dogNumberNUD.Size = new System.Drawing.Size(45, 26);
             this.dogNumberNUD.TabIndex = 21;
-            this.dogNumberNUD.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.ClientSize = new System.Drawing.Size(624, 446);
             this.Controls.Add(this.dogNumberNUD);
             this.Controls.Add(this.betButton);

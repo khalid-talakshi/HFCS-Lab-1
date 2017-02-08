@@ -20,7 +20,7 @@ namespace HFCS_Lab_1
         {
             InitializeComponent();
             setupGreyhounds();
-            setupGuys();           
+            setupGuys();
         }
 
         void setupGreyhounds()
@@ -93,18 +93,43 @@ namespace HFCS_Lab_1
 
         public void betButton_Click(object sender, EventArgs e)
         {
+            int guyNumber = 0;
 
             if (joeBetRadioButton.Checked)
             {
-                guyArray[0].placeBet((int)betValueNUD.Value, (int)dogNumberNUD.Value - 1);
-            } else if (bobBetRadioButton.Checked)
-            {
-                guyArray[1].placeBet((int)betValueNUD.Value, (int)dogNumberNUD.Value - 1);
-            } else if (halBetRadioButton.Checked)
-            {
-                guyArray[2].placeBet((int)betValueNUD.Value, (int)dogNumberNUD.Value - 1);
+                guyNumber = 0;
             }
+
+            if (bobBetRadioButton.Checked)
+            {
+                guyNumber = 1;
+
+            }
+
+            if (halBetRadioButton.Checked)
+            {
+
+                guyNumber = 2;
+
+            }
+
+            guyArray[guyNumber].placeBet((int)betValueNUD.Value, (int)dogNumberNUD.Value);
+            guyArray[guyNumber].updateLabel();
         }
 
+        private void joeBetRadioButton_CheckedChanged(object sender, EventArgs e)
+        {
+            nameLabel.Text = guyArray[0].name;
+        }
+
+        private void bobBetRadioButton_CheckedChanged(object sender, EventArgs e)
+        {
+            nameLabel.Text = guyArray[1].name;
+        }
+
+        private void halBetRadioButton_CheckedChanged(object sender, EventArgs e)
+        {
+            nameLabel.Text = guyArray[2].name;
+        }
     }
 }

@@ -16,11 +16,22 @@ namespace HFCS_Lab_1
         //GUI objects
         public RadioButton myRadioButton;
         public Label myLabel;
-
+        
         public void updateLabel()
         {
 
-            myLabel.Text = myBet.GetDescription();
+            if (myBet == null)
+            {
+
+                myLabel.Text = String.Format("{0} hasn't placed any bets", name);
+
+            }
+            else
+            {
+
+                myLabel.Text = myBet.GetDescription();
+
+            }
             myRadioButton.Text = name + " has " + cash + " bucks";
 
         }
@@ -35,10 +46,7 @@ namespace HFCS_Lab_1
 
             if (betAmount <=  cash)
             {
-                Bet myBet = new Bet();
-                myBet.amount = betAmount;
-                myBet.dog = dogToWin;
-                updateLabel(); 
+                Bet myBet = new Bet(betAmount, dogToWin, this);
                 return true;
             }   
             else
